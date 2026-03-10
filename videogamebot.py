@@ -56,8 +56,8 @@ def post_tweet(text):
 if __name__ == "__main__":
     # 3. Calculate random sleep to post at an unpredictable time during the hour
     # Random number between 0 and 59 minutes (3540 seconds)
-    delay_seconds = # random.randint(0, 3540)
-    delay_minutes = # delay_seconds / 60
+    delay_seconds = 0 # random.randint(0, 3540)
+    delay_minutes = 0 # delay_seconds / 60
     
     logging.info(f"GitHub Action triggered. Sleeping for {delay_minutes:.2f} minutes...")
     time.sleep(delay_seconds)
