@@ -37,5 +37,13 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add latest_tweet.txt
-          # This line checks if the file actually changed before trying to save
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Generated new tweet text" && git push)
+          
+          # Check if there are actually changes to commit
+          if ! git diff --staged --quiet; then
+            git commit -m "Generated new tweet text"
+            # Pull any of your recent manual edits so it doesn't crash
+            git pull --rebase origin main
+            git push
+          else
+            echo "No changes to commit."
+          fi
