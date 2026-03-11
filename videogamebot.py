@@ -1,3 +1,16 @@
+import os
+import logging
+import random
+from google import genai
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
+
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+client = genai.Client(api_key=GEMINI_API_KEY)
+
+# ==========================================
+# THE PROMPT VAULT
+# ==========================================
 PROMPT_LIST = [
     # --- POKÉMON ECONOMY & SOCIETY ---
     "Write a cynical tweet analyzing Silph Co. as a corrupt military-industrial contractor rather than a benevolent tech company. Keep it under 280 characters.",
@@ -59,3 +72,35 @@ PROMPT_LIST = [
     "Write a dark, philosophical tweet about Sonic's speed: he can outrun any physical threat, but he can't outrun his own creeping obsolescence. Keep it under 280 characters.",
     "Write a highly controversial tweet arguing that if the Pokémon universe were real, human civilization would have been wiped out in under three days. Keep it under 280 characters."
 ]
+
+def generate_tweet():
+    # 1. Randomly select one prompt from the vault
+    selected_prompt = random.choice(PROMPT_LIST)
+    logging.info(f"Selected Prompt: {selected_prompt}")
+    
+    try:
+        # 2. Feed the selected prompt to Gemini
+        response = client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=selected_prompt,
+        )
+        tweet_text = response.text.strip()
+        
+        # 3. Trim to fit X's character limit just in case
+        if len(tweet_text) > 280:
+            tweet_text = tweet_text[:277] + "..."
+        return tweet_text
+        
+    except Exception as e:
+        logging.error(f"Failed to generate tweet: {e}")
+        return None
+
+if __name__ == "__main__":
+    logging.info("Waking up to generate new tweet text...")
+    tweet = generate_tweet()
+    
+    if tweet:
+        # Save the text directly to the file for the iPhone shortcut to read
+        with open("latest_tweet.txt", "w", encoding="utf-8") as f:
+            f.write(tweet)
+        logging.info("Successfully saved to latest_tweet.txt")
