@@ -1,1 +1,9 @@
-Hubris defined: Mortals capturing literal deities of space and time inside $12 plastic spheres. The universe must be *so* confused right now.
+To find the difference between 1 minute 57 seconds and 13 minutes 57 seconds, we can subtract the smaller time from the larger time.
+
+1.  **Subtract the seconds:**
+    57 seconds - 57 seconds = 0 seconds
+
+2.  **Subtract the minutes:**
+    13 minutes - 1 minute = 12 minutes
+
+So...
