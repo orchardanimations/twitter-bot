@@ -1,4 +1,3 @@
-Here are a few sharp tweet options, under 280 characters, for a DeFi protocol exploit or vulnerability:
+Here's a tweet about a major, very recent Web3 story that's still dominating discussions:
 
-**Option 1 (Focus on Repetition/Audits):**
-> Another day, another DeFi exploit. Billions in innovation, pennies on security audits. When will "decentralized finance" stop b...
+Big news for #Ethereum! The SEC approved 19b-4 filings for spot ETH ETFs, paving the way for institutional adoption. A huge step for Web3, bringing ETH closer to mainstream finance. What...
