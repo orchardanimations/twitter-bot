@@ -1,3 +1,6 @@
-Okay, here's one based on a common recent theme:
+Here are a few sharp tweets, under 280 characters, on a DeFi exploit/vulnerability:
 
-Stubborn inflation data signals Fed rate cuts further off. That means higher borrowing costs stay locked in for longer: mortgages, loans, business investment. The 'soft landing' narrative just hit turbulence for everyday Americ...
+**Option 1 (Sarcastic):**
+Oh look, another "audited" DeFi protocol just saw millions vanish. Guess that "code is law" only applies until the exploit code wins. Rinse, repeat. #DeFi #Exploit
+
+*...
